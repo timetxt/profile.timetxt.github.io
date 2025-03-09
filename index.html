@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="pageTitle">个人简历与作品集</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen">
+    <!-- 导航栏 -->
+    <nav class="glassmorphism sticky top-0 z-50 px-6 py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gray-800">
+                <span class="text-blue-600">Portfolio</span>
+            </a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#home" class="nav-link" data-i18n="nav.home">首页</a>
+                <a href="#about" class="nav-link" data-i18n="nav.about">关于我</a>
+                <a href="#skills" class="nav-link" data-i18n="nav.skills">技能</a>
+                <a href="#portfolio" class="nav-link" data-i18n="nav.portfolio">作品集</a>
+                <a href="#experience" class="nav-link" data-i18n="nav.experience">经验</a>
+                <a href="#contact" class="nav-link" data-i18n="nav.contact">联系我</a>
+                
+                <!-- 语言切换按钮 -->
+                <button id="lang-toggle" class="lang-toggle-btn">
+                    <span class="current-lang">中文</span>
+                    <i class="fas fa-globe ml-2"></i>
+                </button>
+                
+                <!-- 明暗模式切换按钮 -->
+                <button id="theme-toggle" class="theme-toggle-btn">
+                    <i class="fas fa-sun light-icon"></i>
+                    <i class="fas fa-moon dark-icon"></i>
+                    <span class="mode-text" data-i18n="theme.dark">暗色</span>
+                </button>
+            </div>
+            <button class="md:hidden focus:outline-none" id="menu-toggle">
+                <i class="fas fa-bars text-gray-800 text-2xl"></i>
+            </button>
+        </div>
+        <!-- 移动端菜单 -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="flex flex-col space-y-4 mt-4 pb-4">
+                <a href="#home" class="nav-link" data-i18n="nav.home">首页</a>
+                <a href="#about" class="nav-link" data-i18n="nav.about">关于我</a>
+                <a href="#skills" class="nav-link" data-i18n="nav.skills">技能</a>
+                <a href="#portfolio" class="nav-link" data-i18n="nav.portfolio">作品集</a>
+                <a href="#experience" class="nav-link" data-i18n="nav.experience">经验</a>
+                <a href="#contact" class="nav-link" data-i18n="nav.contact">联系我</a>
+                
+                <!-- 移动端语言切换按钮 -->
+                <button id="lang-toggle-mobile" class="lang-toggle-btn flex items-center">
+                    <span class="current-lang">中文</span>
+                    <i class="fas fa-globe ml-2"></i>
+                </button>
+                
+                <!-- 移动端明暗模式切换按钮 -->
+                <button id="theme-toggle-mobile" class="theme-toggle-btn flex items-center">
+                    <i class="fas fa-sun light-icon"></i>
+                    <i class="fas fa-moon dark-icon"></i>
+                    <span class="mode-text" data-i18n="theme.dark">暗色</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 首页部分 -->
+    <section id="home" class="py-20 md:py-32 flex items-center min-h-screen">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <h1 class="text-4xl md:text-6xl font-bold text-gray-800 mb-4">
+                        <span data-i18n="home.greeting">您好, 我是</span> <span class="text-blue-600" data-i18n="home.name">您的名字</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-gray-600 mb-8" data-i18n="home.title">
+                        全栈开发工程师 | UI/UX设计师 | 创意专家
+                    </p>
+                    <p class="text-gray-600 mb-8 text-lg" data-i18n="home.description">
+                        我专注于创建美观且功能强大的数字体验，将设计与技术完美结合。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#contact" class="neomorphic-btn primary" data-i18n="home.contact">
+                            联系我
+                        </a>
+                        <a href="#portfolio" class="neomorphic-btn secondary" data-i18n="home.viewWorks">
+                            查看作品
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="profile-img-container mx-auto">
+                        <!-- 替换为您的照片 -->
+                        <div class="profile-img-placeholder glassmorphism-heavy">
+                            <i class="fas fa-user text-7xl text-blue-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我部分 -->
+    <section id="about" class="py-20 bg-white bg-opacity-50">
+        <div class="container mx-auto px-6">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="about.title">关于我</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="flex flex-col md:flex-row mt-12">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <div class="glassmorphism p-8 h-full">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4" data-i18n="about.bioTitle">个人简介</h3>
+                        <p class="text-gray-600 mb-4" data-i18n="about.bio1">
+                            我是一名充满激情的全栈开发工程师，拥有丰富的Web和iOS应用开发经验。我喜欢解决复杂问题，并创造出既美观又实用的数字产品。
+                        </p>
+                        <p class="text-gray-600 mb-4" data-i18n="about.bio2">
+                            我擅长Swift、SwiftUI、JavaScript、Node.js和Python，对新技术抱有浓厚的兴趣，并不断学习以保持竞争力。
+                        </p>
+                        <p class="text-gray-600" data-i18n="about.bio3">
+                            在工作之外，我喜欢[您的爱好或兴趣]，这些活动帮助我保持创造力和对设计的敏锐度。
+                        </p>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="glassmorphism p-8 h-full">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4" data-i18n="about.detailsTitle">个人详情</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <p class="text-gray-600"><strong data-i18n="about.name">姓名:</strong> <span data-i18n="about.nameValue">您的名字</span></p>
+                                <p class="text-gray-600"><strong data-i18n="about.dob">出生日期:</strong> <span data-i18n="about.dobValue">YYYY-MM-DD</span></p>
+                                <p class="text-gray-600"><strong data-i18n="about.nationality">国籍:</strong> <span data-i18n="about.nationalityValue">您的国籍</span></p>
+                                <p class="text-gray-600"><strong data-i18n="about.languages">语言:</strong> <span data-i18n="about.languagesValue">中文, 英语</span></p>
+                            </div>
+                            <div>
+                                <p class="text-gray-600"><strong data-i18n="about.address">地址:</strong> <span data-i18n="about.addressValue">您的城市，国家</span></p>
+                                <p class="text-gray-600"><strong data-i18n="about.email">邮箱:</strong> <span data-i18n="about.emailValue">your.email@example.com</span></p>
+                                <p class="text-gray-600"><strong data-i18n="about.phone">电话:</strong> <span data-i18n="about.phoneValue">+XX XXXXXXXXXX</span></p>
+                                <p class="text-gray-600"><strong data-i18n="about.freelance">自由职业:</strong> <span data-i18n="about.freelanceValue">可接受</span></p>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <a href="#" class="neomorphic-btn secondary" data-i18n="about.downloadCV">
+                                下载简历 <i class="fas fa-download ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 技能部分 -->
+    <section id="skills" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="skills.title">我的技能</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+                <!-- 技能卡片 1 -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2" data-i18n="skills.ios.title">iOS开发</h3>
+                    <p class="text-gray-600" data-i18n="skills.ios.description">
+                        精通Swift和SwiftUI，能够开发现代化、高性能的iOS应用程序，支持iPhone和iPad设备。
+                    </p>
+                    <div class="mt-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-gray-700" data-i18n="skills.ios.skill1">Swift</span>
+                            <span class="text-gray-700">90%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-gray-700" data-i18n="skills.ios.skill2">SwiftUI</span>
+                            <span class="text-gray-700">85%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 技能卡片 2 -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2" data-i18n="skills.frontend.title">Web前端</h3>
+                    <p class="text-gray-600" data-i18n="skills.frontend.description">
+                        熟练使用现代前端技术栈，创建响应式、交互性强的用户界面，注重用户体验和性能优化。
+                    </p>
+                    <div class="mt-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-gray-700" data-i18n="skills.frontend.skill1">HTML/CSS</span>
+                            <span class="text-gray-700">95%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-gray-700" data-i18n="skills.frontend.skill2">JavaScript</span>
+                            <span class="text-gray-700">88%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 88%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 技能卡片 3 -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2" data-i18n="skills.backend.title">后端开发</h3>
+                    <p class="text-gray-600" data-i18n="skills.backend.description">
+                        掌握多种后端开发技术，能够构建安全、高效的API和服务，支持现代Web应用和移动应用。
+                    </p>
+                    <div class="mt-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-gray-700" data-i18n="skills.backend.skill1">Node.js</span>
+                            <span class="text-gray-700">85%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-gray-700" data-i18n="skills.backend.skill2">Python</span>
+                            <span class="text-gray-700">80%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作品集部分 -->
+    <section id="portfolio" class="py-20 bg-white bg-opacity-50">
+        <div class="container mx-auto px-6">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="portfolio.title">我的作品</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="portfolio-filter flex flex-wrap justify-center mt-12 mb-8">
+                <button class="filter-btn active" data-filter="all" data-i18n="portfolio.all">全部</button>
+                <button class="filter-btn" data-filter="web" data-i18n="portfolio.web">网站</button>
+                <button class="filter-btn" data-filter="app" data-i18n="portfolio.app">应用</button>
+                <button class="filter-btn" data-filter="design" data-i18n="portfolio.design">设计</button>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 作品 1 -->
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img-placeholder">
+                            <i class="fas fa-laptop text-5xl text-blue-300"></i>
+                        </div>
+                        <div class="portfolio-content">
+                            <h3 class="text-xl font-bold mb-2" data-i18n="portfolio.project1.title">企业网站重设计</h3>
+                            <p class="text-gray-600 mb-4" data-i18n="portfolio.project1.description">为客户重新设计并开发了现代响应式企业网站，提升了用户体验和转化率。</p>
+                            <div class="flex space-x-2">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                            <div class="mt-4">
+                                <a href="#" class="portfolio-link" data-i18n="portfolio.project1.viewDetails">查看详情</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 作品 2 -->
+                <div class="portfolio-item" data-category="app">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img-placeholder">
+                            <i class="fas fa-mobile-alt text-5xl text-blue-300"></i>
+                        </div>
+                        <div class="portfolio-content">
+                            <h3 class="text-xl font-bold mb-2" data-i18n="portfolio.project2.title">健身追踪应用</h3>
+                            <p class="text-gray-600 mb-4" data-i18n="portfolio.project2.description">开发了一个功能全面的iOS健身追踪应用，帮助用户监控锻炼和健康指标。</p>
+                            <div class="flex space-x-2">
+                                <span class="tech-tag">Swift</span>
+                                <span class="tech-tag">SwiftUI</span>
+                                <span class="tech-tag">HealthKit</span>
+                            </div>
+                            <div class="mt-4">
+                                <a href="#" class="portfolio-link" data-i18n="portfolio.project2.viewDetails">查看详情</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 作品 3 -->
+                <div class="portfolio-item" data-category="design">
+                    <div class="portfolio-card">
+                        <div class="portfolio-img-placeholder">
+                            <i class="fas fa-palette text-5xl text-blue-300"></i>
+                        </div>
+                        <div class="portfolio-content">
+                            <h3 class="text-xl font-bold mb-2" data-i18n="portfolio.project3.title">品牌标识设计</h3>
+                            <p class="text-gray-600 mb-4" data-i18n="portfolio.project3.description">为初创公司设计了现代简约的品牌标识和视觉识别系统，帮助其建立品牌形象。</p>
+                            <div class="flex space-x-2">
+                                <span class="tech-tag">Logo设计</span>
+                                <span class="tech-tag">品牌识别</span>
+                                <span class="tech-tag">排版</span>
+                            </div>
+                            <div class="mt-4">
+                                <a href="#" class="portfolio-link" data-i18n="portfolio.project3.viewDetails">查看详情</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 工作经验部分 -->
+    <section id="experience" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="experience.title">工作经验</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="mt-12">
+                <div class="timeline">
+                    <!-- 经验 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date" data-i18n="experience.job1.period">2021 - 至今</div>
+                        <div class="timeline-content glassmorphism">
+                            <h3 class="text-xl font-bold text-gray-800" data-i18n="experience.job1.title">高级全栈开发工程师</h3>
+                            <h4 class="text-lg text-blue-600 mb-2" data-i18n="experience.job1.company">科技公司名称</h4>
+                            <p class="text-gray-600 mb-4" data-i18n="experience.job1.description">
+                                作为团队的核心成员，负责开发和维护公司的旗舰产品。主导了多个关键项目，
+                                优化了前端性能和后端架构，并指导初级开发人员。
+                            </p>
+                            <div class="flex flex-wrap">
+                                <span class="exp-tag">Web开发</span>
+                                <span class="exp-tag">iOS开发</span>
+                                <span class="exp-tag">团队管理</span>
+                                <span class="exp-tag">技术架构</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 经验 2 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date" data-i18n="experience.job2.period">2018 - 2021</div>
+                        <div class="timeline-content glassmorphism">
+                            <h3 class="text-xl font-bold text-gray-800" data-i18n="experience.job2.title">前端开发工程师</h3>
+                            <h4 class="text-lg text-blue-600 mb-2" data-i18n="experience.job2.company">公司名称</h4>
+                            <p class="text-gray-600 mb-4" data-i18n="experience.job2.description">
+                                负责开发和优化公司网站和Web应用的用户界面。实现了响应式设计，
+                                提高了网站性能和用户体验，参与了多个关键项目的开发周期。
+                            </p>
+                            <div class="flex flex-wrap">
+                                <span class="exp-tag">HTML/CSS</span>
+                                <span class="exp-tag">JavaScript</span>
+                                <span class="exp-tag">UI/UX</span>
+                                <span class="exp-tag">React</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 经验 3 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date" data-i18n="experience.job3.period">2016 - 2018</div>
+                        <div class="timeline-content glassmorphism">
+                            <h3 class="text-xl font-bold text-gray-800" data-i18n="experience.job3.title">iOS开发实习生</h3>
+                            <h4 class="text-lg text-blue-600 mb-2" data-i18n="experience.job3.company">初创公司名称</h4>
+                            <p class="text-gray-600 mb-4" data-i18n="experience.job3.description">
+                                协助开发公司的iOS应用，学习并实践Swift编程。参与了应用设计、开发和测试的全过程，
+                                为多个功能模块的实现做出了贡献。
+                            </p>
+                            <div class="flex flex-wrap">
+                                <span class="exp-tag">Swift</span>
+                                <span class="exp-tag">iOS开发</span>
+                                <span class="exp-tag">UI设计</span>
+                                <span class="exp-tag">版本控制</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系部分 -->
+    <section id="contact" class="py-20 bg-white bg-opacity-50">
+        <div class="container mx-auto px-6">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="contact.title">联系我</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="flex flex-col md:flex-row mt-12">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <div class="glassmorphism p-8 h-full">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4" data-i18n="contact.infoTitle">联系信息</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <p class="text-gray-600" data-i18n="contact.address">您的城市，国家</p>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <p class="text-gray-600" data-i18n="contact.email">your.email@example.com</p>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <p class="text-gray-600" data-i18n="contact.phone">+XX XXXXXXXXXX</p>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <h4 class="text-xl font-bold text-gray-800 mb-4" data-i18n="contact.social">在社交媒体上关注我</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="social-icon">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="social-icon">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="#" class="social-icon">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="social-icon">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="glassmorphism p-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4" data-i18n="contact.formTitle">给我发送消息</h3>
+                        <form class="space-y-4">
+                            <div class="floating-input">
+                                <input type="text" id="name" class="form-input" placeholder=" " required>
+                                <label for="name" data-i18n="contact.nameLabel">您的姓名</label>
+                            </div>
+                            <div class="floating-input">
+                                <input type="email" id="email" class="form-input" placeholder=" " required>
+                                <label for="email" data-i18n="contact.emailLabel">您的邮箱</label>
+                            </div>
+                            <div class="floating-input">
+                                <input type="text" id="subject" class="form-input" placeholder=" " required>
+                                <label for="subject" data-i18n="contact.subjectLabel">主题</label>
+                            </div>
+                            <div class="floating-input">
+                                <textarea id="message" rows="4" class="form-input" placeholder=" " required></textarea>
+                                <label for="message" data-i18n="contact.messageLabel">您的消息</label>
+                            </div>
+                            <button type="submit" class="neomorphic-btn primary w-full">
+                                <span data-i18n="contact.send">发送消息</span> <i class="fas fa-paper-plane ml-2"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="mb-4 md:mb-0">© <span id="current-year">2023</span> <span data-i18n="home.name">您的名字</span>. <span data-i18n="footer.copyright">保留所有权利.</span></p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 回到顶部按钮 -->
+    <button id="back-to-top" class="back-to-top-btn" aria-label="回到顶部">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- 语言文件 -->
+    <script src="languages.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
