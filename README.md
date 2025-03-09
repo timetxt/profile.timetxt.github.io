@@ -2,6 +2,8 @@
 
 这是一个现代化的个人简历与作品集展示网站，采用了现代Web设计的最佳实践。
 
+[Demo入口](https://timetxt.github.io/profile.timetxt.github.io/)
+
 ## 功能特点
 
 - **响应式设计**：在各种设备（从手机到桌面电脑）上都能完美展示
